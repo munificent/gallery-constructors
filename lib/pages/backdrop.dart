@@ -17,18 +17,12 @@ const double _settingsButtonWidth = 64;
 const double _settingsButtonHeightDesktop = 56;
 const double _settingsButtonHeightMobile = 40;
 
-class Backdrop extends StatefulWidget {
-  const Backdrop({
-    super.key,
-    required this.isDesktop,
-    this.settingsPage,
-    this.homePage,
-  });
-
-  final bool isDesktop;
-  final Widget? settingsPage;
-  final Widget? homePage;
-
+class const Backdrop({
+  super.key,
+  required final bool isDesktop,
+  final Widget? settingsPage,
+  final Widget? homePage,
+}) extends StatefulWidget {
   @override
   State<Backdrop> createState() => _BackdropState();
 }
@@ -240,6 +234,7 @@ class _BackdropState extends State<Backdrop> with TickerProviderStateMixin {
 }
 
 class _SettingsIcon extends AnimatedWidget {
+  // Fell off cliff with super() call here:
   const _SettingsIcon({
     required this.animationController,
     required this.toggleSettings,

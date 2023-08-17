@@ -11,9 +11,7 @@ import 'package:gallery/studies/rally/finance.dart';
 import 'package:gallery/studies/rally/tabs/sidebar.dart';
 
 /// A page that shows a summary of accounts.
-class AccountsView extends StatelessWidget {
-  const AccountsView({super.key});
-
+class const AccountsView({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = DummyDataService.getAccountDataList(context);

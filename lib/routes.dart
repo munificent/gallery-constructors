@@ -24,11 +24,9 @@ import 'package:gallery/studies/starter/routes.dart' as starter_app_routes;
 
 typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
-class Path {
-  const Path(this.pattern, this.builder, {this.openInSecondScreen = false});
-
+class const Path(
   /// A RegEx string for route matching.
-  final String pattern;
+  final String pattern,
 
   /// The builder for the associated pattern route. The first argument is the
   /// [BuildContext] and the second argument a RegEx match if that is included
@@ -40,11 +38,11 @@ class Path {
   ///   (context, matches) => Page(argument: match),
   /// )
   /// ```
-  final PathWidgetBuilder builder;
+  final PathWidgetBuilder builder,
 
   /// If the route should open on the second screen on foldables.
-  final bool openInSecondScreen;
-}
+  final bool openInSecondScreen = false,
+});
 
 class RouteConfiguration {
   /// List of [Path] to for route matching. When a named route is pushed with
@@ -152,12 +150,10 @@ class RouteConfiguration {
   }
 }
 
-class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
-  NoAnimationMaterialPageRoute({
-    required super.builder,
-    super.settings,
-  });
-
+class NoAnimationMaterialPageRoute<T>({
+  required super.builder,
+  super.settings,
+}) extends MaterialPageRoute<T> {
   @override
   Widget buildTransitions(
     BuildContext context,
@@ -169,14 +165,10 @@ class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
   }
 }
 
-class TwoPanePageRoute<T> extends OverlayRoute<T> {
-  TwoPanePageRoute({
-    required this.builder,
-    super.settings,
-  });
-
-  final WidgetBuilder builder;
-
+class TwoPanePageRoute<T>({
+  required final WidgetBuilder builder,
+  super.settings,
+}) extends OverlayRoute<T> {
   @override
   Iterable<OverlayEntry> createOverlayEntries() sync* {
     yield OverlayEntry(builder: (context) {

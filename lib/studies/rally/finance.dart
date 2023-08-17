@@ -19,6 +19,7 @@ import 'package:gallery/studies/rally/data.dart';
 import 'package:gallery/studies/rally/formatters.dart';
 
 class FinancialEntityView extends StatelessWidget {
+  // Fell off cliff here.
   const FinancialEntityView({
     super.key,
     required this.heroLabel,
@@ -78,26 +79,16 @@ class FinancialEntityView extends StatelessWidget {
 }
 
 /// A reusable widget to show balance information of a single entity as a card.
-class FinancialEntityCategoryView extends StatelessWidget {
-  const FinancialEntityCategoryView({
-    super.key,
-    required this.indicatorColor,
-    required this.indicatorFraction,
-    required this.title,
-    required this.subtitle,
-    required this.semanticsLabel,
-    required this.amount,
-    required this.suffix,
-  });
-
-  final Color indicatorColor;
-  final double indicatorFraction;
-  final String title;
-  final String subtitle;
-  final String semanticsLabel;
-  final String amount;
-  final Widget suffix;
-
+class const FinancialEntityCategoryView({
+  super.key,
+  required final Color indicatorColor,
+  required final double indicatorFraction,
+  required final String title,
+  required final String subtitle,
+  required final String semanticsLabel,
+  required final String amount,
+  required final Widget suffix,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -192,23 +183,14 @@ class FinancialEntityCategoryView extends StatelessWidget {
 }
 
 /// Data model for [FinancialEntityCategoryView].
-class FinancialEntityCategoryModel {
-  const FinancialEntityCategoryModel(
-    this.indicatorColor,
-    this.indicatorFraction,
-    this.title,
-    this.subtitle,
-    this.usdAmount,
-    this.suffix,
-  );
-
-  final Color indicatorColor;
-  final double indicatorFraction;
-  final String title;
-  final String subtitle;
-  final double usdAmount;
-  final Widget suffix;
-}
+class const FinancialEntityCategoryModel(
+  final Color indicatorColor,
+  final double indicatorFraction,,
+  final String title,
+  final String subtitle,
+  final double usdAmount,
+  final Widget suffix,
+);
 
 FinancialEntityCategoryView buildFinancialEntityFromAccountData(
   AccountData model,
@@ -315,9 +297,7 @@ List<FinancialEntityCategoryView> buildBudgetDataListViews(
   ];
 }
 
-class FinancialEntityCategoryDetailsPage extends StatelessWidget {
-  FinancialEntityCategoryDetailsPage({super.key});
-
+class FinancialEntityCategoryDetailsPage({super.key}) extends StatelessWidget {
   final List<DetailedEventData> items =
       DummyDataService.getDetailedEventItems();
 
@@ -366,17 +346,11 @@ class FinancialEntityCategoryDetailsPage extends StatelessWidget {
   }
 }
 
-class _DetailedEventCard extends StatelessWidget {
-  const _DetailedEventCard({
-    required this.title,
-    required this.date,
-    required this.amount,
-  });
-
-  final String title;
-  final DateTime date;
-  final double amount;
-
+class const _DetailedEventCard({
+  required final String title,
+  required final DateTime date,
+  required final double amount,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = isDisplayDesktop(context);
@@ -435,11 +409,9 @@ class _DetailedEventCard extends StatelessWidget {
   }
 }
 
-class _EventAmount extends StatelessWidget {
-  const _EventAmount({required this.amount});
-
-  final double amount;
-
+class const _EventAmount({
+  required final double amount,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -453,11 +425,7 @@ class _EventAmount extends StatelessWidget {
   }
 }
 
-class _EventDate extends StatelessWidget {
-  const _EventDate({required this.date});
-
-  final DateTime date;
-
+class const _EventDate({required final DateTime date}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -469,11 +437,7 @@ class _EventDate extends StatelessWidget {
   }
 }
 
-class _EventTitle extends StatelessWidget {
-  const _EventTitle({required this.title});
-
-  final String title;
-
+class const _EventTitle({required final String title}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;

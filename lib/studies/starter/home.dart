@@ -9,9 +9,7 @@ import 'package:gallery/layout/adaptive.dart';
 
 const appBarDesktopHeight = 128.0;
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+class const HomePage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -91,14 +89,10 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class AdaptiveAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const AdaptiveAppBar({
-    super.key,
-    this.isDesktop = false,
-  });
-
-  final bool isDesktop;
-
+class const AdaptiveAppBar({
+  super.key,
+  final bool isDesktop = false,
+}) extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => isDesktop
       ? const Size.fromHeight(appBarDesktopHeight)
@@ -149,9 +143,7 @@ class AdaptiveAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-class ListDrawer extends StatefulWidget {
-  const ListDrawer({super.key});
-
+class const ListDrawer({super.key}) extends StatefulWidget {
   @override
   State<ListDrawer> createState() => _ListDrawerState();
 }

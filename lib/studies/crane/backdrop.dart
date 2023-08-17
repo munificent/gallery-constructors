@@ -17,19 +17,12 @@ import 'package:gallery/studies/crane/item_cards.dart';
 import 'package:gallery/studies/crane/model/data.dart';
 import 'package:gallery/studies/crane/model/destination.dart';
 
-class _FrontLayer extends StatefulWidget {
-  const _FrontLayer({
-    required this.title,
-    required this.index,
-    required this.mobileTopOffset,
-    required this.restorationId,
-  });
-
-  final String title;
-  final int index;
-  final double mobileTopOffset;
-  final String restorationId;
-
+class const _FrontLayer({
+  required final String title,
+  required final int index,
+  required final double mobileTopOffset,
+  required final String restorationId,
+}) extends StatefulWidget {
   @override
   _FrontLayerState createState() => _FrontLayerState();
 }
@@ -128,20 +121,13 @@ class _FrontLayerState extends State<_FrontLayer> {
 /// by default, and slides down to show the back layer, from which a user
 /// can make a selection. The user can also configure the titles for when the
 /// front or back layer is showing.
-class Backdrop extends StatefulWidget {
-  final Widget frontLayer;
-  final List<BackLayerItem> backLayerItems;
-  final Widget frontTitle;
-  final Widget backTitle;
-
-  const Backdrop({
-    super.key,
-    required this.frontLayer,
-    required this.backLayerItems,
-    required this.frontTitle,
-    required this.backTitle,
-  });
-
+class const Backdrop({
+  super.key,
+  required final Widget frontLayer,
+  required final List<BackLayerItem> backLayerItems,
+  required final Widget frontTitle,
+  required final Widget backTitle,
+}) extends StatefulWidget {
   @override
   State<Backdrop> createState() => _BackdropState();
 }
@@ -297,16 +283,11 @@ class _BackdropState extends State<Backdrop>
   }
 }
 
-class CraneAppBar extends StatefulWidget {
-  final Function(int)? tabHandler;
-  final TabController tabController;
-
-  const CraneAppBar({
-    super.key,
-    this.tabHandler,
-    required this.tabController,
-  });
-
+class const CraneAppBar({
+  super.key,
+  final Function(int)? tabHandler,
+  required final TabController tabController,
+}) extends StatefulWidget {
   @override
   State<CraneAppBar> createState() => _CraneAppBarState();
 }

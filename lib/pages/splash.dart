@@ -14,15 +14,11 @@ import 'package:gallery/pages/home.dart';
 const homePeekDesktop = 210.0;
 const homePeekMobile = 60.0;
 
-class SplashPageAnimation extends InheritedWidget {
-  const SplashPageAnimation({
-    super.key,
-    required this.isFinished,
-    required super.child,
-  });
-
-  final bool isFinished;
-
+class const SplashPageAnimation({
+  super.key,
+  required final bool isFinished,
+  required super.child,
+}) extends InheritedWidget {
   static SplashPageAnimation? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType();
   }
@@ -31,14 +27,10 @@ class SplashPageAnimation extends InheritedWidget {
   bool updateShouldNotify(SplashPageAnimation oldWidget) => true;
 }
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({
-    super.key,
-    required this.child,
-  });
-
-  final Widget child;
-
+class const SplashPage({
+  super.key,
+  required final Widget child,
+}) extends StatefulWidget {
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
@@ -185,17 +177,11 @@ class _SplashPageState extends State<SplashPage>
   }
 }
 
-class _SplashBackLayer extends StatelessWidget {
-  const _SplashBackLayer({
-    required this.isSplashCollapsed,
-    required this.effect,
-    this.onTap,
-  });
-
-  final bool isSplashCollapsed;
-  final int effect;
-  final GestureTapCallback? onTap;
-
+class const _SplashBackLayer({
+  required final bool isSplashCollapsed,
+  required final int effect,
+  final GestureTapCallback? onTap,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var effectAsset = 'splash_effects/splash_effect_$effect.gif';

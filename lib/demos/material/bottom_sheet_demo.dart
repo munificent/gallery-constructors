@@ -7,14 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:gallery/demos/material/material_demo_types.dart';
 
-class BottomSheetDemo extends StatelessWidget {
-  const BottomSheetDemo({
-    super.key,
-    required this.type,
-  });
-
-  final BottomSheetDemoType type;
-
+class const BottomSheetDemo({
+  super.key,
+  required final BottomSheetDemoType type,
+}) extends StatelessWidget {
   String _title(BuildContext context) {
     final localizations = GalleryLocalizations.of(context)!;
     switch (type) {

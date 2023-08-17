@@ -27,9 +27,7 @@ final mobileMailNavKey = GlobalKey<NavigatorState>();
 const double _kFlingVelocity = 2.0;
 const _kAnimationDuration = Duration(milliseconds: 300);
 
-class AdaptiveNav extends StatefulWidget {
-  const AdaptiveNav({super.key});
-
+class const AdaptiveNav({super.key}) extends StatefulWidget {
   @override
   State<AdaptiveNav> createState() => _AdaptiveNavState();
 }
@@ -129,19 +127,12 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
   }
 }
 
-class _DesktopNav extends StatefulWidget {
-  const _DesktopNav({
-    required this.extended,
-    required this.destinations,
-    required this.folders,
-    required this.onItemTapped,
-  });
-
-  final bool extended;
-  final List<_Destination> destinations;
-  final Map<String, String> folders;
-  final void Function(int, MailboxPageType) onItemTapped;
-
+class const _DesktopNav({
+  required final bool extended,
+  required final List<_Destination> destinations,
+  required final Map<String, String> folders,
+  required final void Function(int, MailboxPageType) onItemTapped,
+}) extends StatefulWidget {
   @override
   _DesktopNavState createState() => _DesktopNavState();
 }
@@ -246,11 +237,9 @@ class _DesktopNavState extends State<_DesktopNav>
   }
 }
 
-class _NavigationRailHeader extends StatelessWidget {
-  const _NavigationRailHeader({required this.extended});
-
-  final ValueNotifier<bool> extended;
-
+class const _NavigationRailHeader({
+  required final ValueNotifier<bool> extended,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -341,11 +330,9 @@ class _NavigationRailHeader extends StatelessWidget {
   }
 }
 
-class _NavigationRailFolderSection extends StatelessWidget {
-  const _NavigationRailFolderSection({required this.folders});
-
-  final Map<String, String> folders;
-
+class const _NavigationRailFolderSection({
+  required final Map<String, String> folders,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -436,17 +423,11 @@ class _NavigationRailFolderSection extends StatelessWidget {
   }
 }
 
-class _MobileNav extends StatefulWidget {
-  const _MobileNav({
-    required this.destinations,
-    required this.folders,
-    required this.onItemTapped,
-  });
-
-  final List<_Destination> destinations;
-  final Map<String, String> folders;
-  final void Function(int, MailboxPageType) onItemTapped;
-
+class const _MobileNav({
+  required final List<_Destination> destinations,
+  required final Map<String, String> folders,
+  required final void Function(int, MailboxPageType) onItemTapped,
+}) extends StatefulWidget {
   @override
   _MobileNavState createState() => _MobileNavState();
 }
@@ -693,27 +674,16 @@ class _MobileNavState extends State<_MobileNav> with TickerProviderStateMixin {
   }
 }
 
-class _AnimatedBottomAppBar extends StatelessWidget {
-  const _AnimatedBottomAppBar({
-    required this.bottomAppBarController,
-    required this.bottomAppBarCurve,
-    required this.bottomDrawerVisible,
-    required this.drawerController,
-    required this.dropArrowCurve,
-    required this.navigationDestinations,
-    this.selectedMailbox,
-    this.toggleBottomDrawerVisibility,
-  });
-
-  final AnimationController bottomAppBarController;
-  final Animation<double> bottomAppBarCurve;
-  final bool bottomDrawerVisible;
-  final AnimationController drawerController;
-  final Animation<double> dropArrowCurve;
-  final List<_Destination> navigationDestinations;
-  final MailboxPageType? selectedMailbox;
-  final ui.VoidCallback? toggleBottomDrawerVisibility;
-
+class const _AnimatedBottomAppBar({
+  required final AnimationController bottomAppBarController,
+  required final Animation<double> bottomAppBarCurve,
+  required final bool bottomDrawerVisible,
+  required final AnimationController drawerController,
+  required final Animation<double> dropArrowCurve,
+  required final List<_Destination> navigationDestinations,
+  final MailboxPageType? selectedMailbox,
+  final ui.VoidCallback? toggleBottomDrawerVisibility,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var fadeOut = Tween<double>(begin: 1, end: -1).animate(
@@ -801,11 +771,9 @@ class _AnimatedBottomAppBar extends StatelessWidget {
   }
 }
 
-class _BottomAppBarActionItems extends StatelessWidget {
-  const _BottomAppBarActionItems({required this.drawerVisible});
-
-  final bool drawerVisible;
-
+class const _BottomAppBarActionItems({
+  required final bool drawerVisible,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<EmailStore>(
@@ -904,21 +872,13 @@ class _BottomAppBarActionItems extends StatelessWidget {
   }
 }
 
-class _BottomDrawerDestinations extends StatelessWidget {
-  const _BottomDrawerDestinations({
-    required this.destinations,
-    required this.drawerController,
-    required this.dropArrowController,
-    required this.selectedMailbox,
-    required this.onItemTapped,
-  });
-
-  final List<_Destination> destinations;
-  final AnimationController drawerController;
-  final AnimationController dropArrowController;
-  final MailboxPageType selectedMailbox;
-  final void Function(int, MailboxPageType) onItemTapped;
-
+class const _BottomDrawerDestinations({
+  required final List<_Destination> destinations,
+  required final AnimationController drawerController,
+  required final AnimationController dropArrowController,
+  required final MailboxPageType selectedMailbox,
+  required final void Function(int, MailboxPageType) onItemTapped,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -974,28 +934,20 @@ class _BottomDrawerDestinations extends StatelessWidget {
   }
 }
 
-class _Destination {
-  const _Destination({
-    required this.type,
-    required this.textLabel,
-    required this.icon,
-  });
-
+class const _Destination({
   // Which mailbox page to display. For example, 'Starred' or 'Trash'.
-  final MailboxPageType type;
+  required final MailboxPageType type,
 
   // The localized text label for the inbox.
-  final String textLabel;
+  required final String textLabel,
 
   // The icon that appears next to the text label for the inbox.
-  final String icon;
-}
+  required final String icon,
+});
 
-class _BottomDrawerFolderSection extends StatelessWidget {
-  const _BottomDrawerFolderSection({required this.folders});
-
-  final Map<String, String> folders;
-
+class const _BottomDrawerFolderSection({
+  required final Map<String, String> folders,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -1028,13 +980,9 @@ class _BottomDrawerFolderSection extends StatelessWidget {
   }
 }
 
-class _MailNavigator extends StatefulWidget {
-  const _MailNavigator({
-    required this.child,
-  });
-
-  final Widget child;
-
+class const _MailNavigator({
+  required final Widget child,
+}) extends StatefulWidget {
   @override
   _MailNavigatorState createState() => _MailNavigatorState();
 }
@@ -1071,9 +1019,7 @@ class _MailNavigatorState extends State<_MailNavigator> {
   }
 }
 
-class _ReplyLogo extends StatelessWidget {
-  const _ReplyLogo();
-
+class const _ReplyLogo() extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ImageIcon(
@@ -1087,11 +1033,7 @@ class _ReplyLogo extends StatelessWidget {
   }
 }
 
-class _ReplyFab extends StatefulWidget {
-  const _ReplyFab({this.extended = false});
-
-  final bool extended;
-
+class const _ReplyFab({final bool extended = false}) extends StatefulWidget {
   @override
   _ReplyFabState createState() => _ReplyFabState();
 }
@@ -1225,15 +1167,10 @@ class _ReplyFabState extends State<_ReplyFab>
   }
 }
 
-class _FadeThroughTransitionSwitcher extends StatelessWidget {
-  const _FadeThroughTransitionSwitcher({
-    required this.fillColor,
-    required this.child,
-  });
-
-  final Widget child;
-  final Color fillColor;
-
+class const _FadeThroughTransitionSwitcher({
+  required final Color fillColor,
+  required final Widget child,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageTransitionSwitcher(
@@ -1250,11 +1187,9 @@ class _FadeThroughTransitionSwitcher extends StatelessWidget {
   }
 }
 
-class _SharedAxisTransitionSwitcher extends StatelessWidget {
-  const _SharedAxisTransitionSwitcher({required this.defaultChild});
-
-  final Widget defaultChild;
-
+class const _SharedAxisTransitionSwitcher({
+  required final Widget defaultChild,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Selector<EmailStore, bool>(

@@ -8,19 +8,12 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:gallery/data/gallery_options.dart';
 import 'package:gallery/studies/crane/model/formatters.dart';
 
-abstract class Destination {
-  const Destination({
-    required this.id,
-    required this.destination,
-    required this.assetSemanticLabel,
-    required this.imageAspectRatio,
-  });
-
-  final int id;
-  final String destination;
-  final String assetSemanticLabel;
-  final double imageAspectRatio;
-
+abstract class const Destination({
+  required final int id,
+  required final String destination,
+  required final String assetSemanticLabel,
+  required final double imageAspectRatio,
+}) {
   String get assetName;
 
   String subtitle(BuildContext context);
@@ -31,19 +24,14 @@ abstract class Destination {
   String toString() => '$destination (id=$id)';
 }
 
-class FlyDestination extends Destination {
-  const FlyDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.stops,
-    super.imageAspectRatio = 1,
-    this.duration,
-  });
-
-  final int stops;
-  final Duration? duration;
-
+class const FlyDestination({
+  required super.id,
+  required super.destination,
+  required super.assetSemanticLabel,
+  required final int stops,
+  super.imageAspectRatio = 1,
+  final Duration? duration,
+}) extends Destination {
   @override
   String get assetName => 'crane/destinations/fly_$id.jpg';
 
@@ -77,17 +65,13 @@ class FlyDestination extends Destination {
   }
 }
 
-class SleepDestination extends Destination {
-  const SleepDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.total,
-    super.imageAspectRatio = 1,
-  });
-
-  final int total;
-
+class const SleepDestination({
+  required super.id,
+  required super.destination,
+  required super.assetSemanticLabel,
+  required final int total,
+  super.imageAspectRatio = 1,
+}) extends Destination {
   @override
   String get assetName => 'crane/destinations/sleep_$id.jpg';
 
@@ -97,17 +81,13 @@ class SleepDestination extends Destination {
   }
 }
 
-class EatDestination extends Destination {
-  const EatDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.total,
-    super.imageAspectRatio = 1,
-  });
-
-  final int total;
-
+class const EatDestination({
+  required super.id,
+  required super.destination,
+  required super.assetSemanticLabel,
+  required final int total,
+  super.imageAspectRatio = 1,
+}) extends Destination {
   @override
   String get assetName => 'crane/destinations/eat_$id.jpg';
 

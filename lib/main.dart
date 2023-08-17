@@ -48,16 +48,11 @@ void main() async {
   runApp(const GalleryApp());
 }
 
-class GalleryApp extends StatelessWidget {
-  const GalleryApp({
-    super.key,
-    this.initialRoute,
-    this.isTestMode = false,
-  });
-
-  final String? initialRoute;
-  final bool isTestMode;
-
+class const GalleryApp({
+  super.key,
+  final String? initialRoute,
+  final bool isTestMode = false,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ModelBinding(
@@ -105,11 +100,7 @@ class GalleryApp extends StatelessWidget {
   }
 }
 
-class RootPage extends StatelessWidget {
-  const RootPage({
-    super.key,
-  });
-
+class const RootPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ApplyTextOptions(

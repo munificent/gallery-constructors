@@ -18,26 +18,15 @@ const productCardDividerHeight = 84.0;
 /// Height of the space at the top of every other column.
 const columnTopSpace = 84.0;
 
-class DesktopProductCardColumn extends StatelessWidget {
-  const DesktopProductCardColumn({
-    super.key,
-    required this.alignToEnd,
-    required this.startLarge,
-    required this.lowerStart,
-    required this.products,
-    required this.largeImageWidth,
-    required this.smallImageWidth,
-  });
-
-  final List<Product> products;
-
-  final bool alignToEnd;
-  final bool startLarge;
-  final bool lowerStart;
-
-  final double largeImageWidth;
-  final double smallImageWidth;
-
+class const DesktopProductCardColumn({
+  super.key,
+  required final bool alignToEnd,
+  required final bool startLarge,
+  required final bool lowerStart,
+  required final List<Product> products,
+  required final double largeImageWidth,
+  required final double smallImageWidth,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
