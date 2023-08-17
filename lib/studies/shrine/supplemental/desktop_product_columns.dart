@@ -19,16 +19,6 @@ const productCardDividerHeight = 84.0;
 const columnTopSpace = 84.0;
 
 class DesktopProductCardColumn extends StatelessWidget {
-  const DesktopProductCardColumn({
-    super.key,
-    required this.alignToEnd,
-    required this.startLarge,
-    required this.lowerStart,
-    required this.products,
-    required this.largeImageWidth,
-    required this.smallImageWidth,
-  });
-
   final List<Product> products;
 
   final bool alignToEnd;

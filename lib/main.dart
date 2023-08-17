@@ -49,9 +49,7 @@ void main() async {
 }
 
 class GalleryApp extends StatelessWidget {
-  const GalleryApp({
-    super.key,
-    this.initialRoute,
+  default const GalleryApp({
     this.isTestMode = false,
   });
 
@@ -106,10 +104,6 @@ class GalleryApp extends StatelessWidget {
 }
 
 class RootPage extends StatelessWidget {
-  const RootPage({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return ApplyTextOptions(

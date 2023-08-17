@@ -14,8 +14,7 @@ import 'package:gallery/studies/rally/formatters.dart';
 import 'package:intl/intl.dart' as intl;
 
 class RallyLineChart extends StatelessWidget {
-  const RallyLineChart({
-    super.key,
+  default const RallyLineChart({
     this.events = const <DetailedEventData>[],
   });
 
@@ -40,16 +39,6 @@ class RallyLineChart extends StatelessWidget {
 }
 
 class RallyLineChartPainter extends CustomPainter {
-  RallyLineChartPainter({
-    required this.dateFormat,
-    required this.numberFormat,
-    required this.events,
-    required this.labelStyle,
-    required this.textDirection,
-    required this.textScaleFactor,
-    required this.padding,
-  });
-
   // The style for the labels.
   final TextStyle labelStyle;
 

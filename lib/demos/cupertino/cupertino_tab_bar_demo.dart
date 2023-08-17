@@ -16,8 +16,6 @@ class _TabInfo {
 }
 
 class CupertinoTabBarDemo extends StatelessWidget {
-  const CupertinoTabBarDemo({super.key});
-
   @override
   Widget build(BuildContext context) {
     final localizations = GalleryLocalizations.of(context)!;
@@ -65,11 +63,6 @@ class CupertinoTabBarDemo extends StatelessWidget {
 }
 
 class _CupertinoDemoTab extends StatelessWidget {
-  const _CupertinoDemoTab({
-    required this.title,
-    required this.icon,
-  });
-
   final String title;
   final IconData icon;
 

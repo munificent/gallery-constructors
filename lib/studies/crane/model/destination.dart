@@ -32,14 +32,7 @@ abstract class Destination {
 }
 
 class FlyDestination extends Destination {
-  const FlyDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.stops,
-    super.imageAspectRatio = 1,
-    this.duration,
-  });
+  default const FlyDestination({super.imageAspectRatio = 1});
 
   final int stops;
   final Duration? duration;
@@ -78,13 +71,7 @@ class FlyDestination extends Destination {
 }
 
 class SleepDestination extends Destination {
-  const SleepDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.total,
-    super.imageAspectRatio = 1,
-  });
+  default const SleepDestination({super.imageAspectRatio = 1});
 
   final int total;
 
@@ -98,13 +85,7 @@ class SleepDestination extends Destination {
 }
 
 class EatDestination extends Destination {
-  const EatDestination({
-    required super.id,
-    required super.destination,
-    required super.assetSemanticLabel,
-    required this.total,
-    super.imageAspectRatio = 1,
-  });
+  default const EatDestination({super.imageAspectRatio = 1});
 
   final int total;
 

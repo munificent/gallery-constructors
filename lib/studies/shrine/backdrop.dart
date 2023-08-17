@@ -16,11 +16,6 @@ const _peakVelocityTime = 0.248210;
 const _peakVelocityProgress = 0.379146;
 
 class _FrontLayer extends StatelessWidget {
-  const _FrontLayer({
-    this.onTap,
-    required this.child,
-  });
-
   final VoidCallback? onTap;
   final Widget child;
 
@@ -65,13 +60,6 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  const _BackdropTitle({
-    required Animation<double> super.listenable,
-    this.onPress,
-    required this.frontTitle,
-    required this.backTitle,
-  });
-
   final void Function()? onPress;
   final Widget frontTitle;
   final Widget backTitle;
@@ -188,12 +176,6 @@ class Backdrop extends StatefulWidget {
     required this.backTitle,
     required this.controller,
   });
-
-  final Widget frontLayer;
-  final Widget backLayer;
-  final Widget frontTitle;
-  final Widget backTitle;
-  final AnimationController controller;
 
   @override
   State<Backdrop> createState() => _BackdropState();
@@ -365,12 +347,6 @@ class _BackdropState extends State<Backdrop>
 }
 
 class DesktopBackdrop extends StatelessWidget {
-  const DesktopBackdrop({
-    super.key,
-    required this.frontLayer,
-    required this.backLayer,
-  });
-
   final Widget frontLayer;
   final Widget backLayer;
 

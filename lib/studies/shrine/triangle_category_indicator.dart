@@ -18,11 +18,6 @@ const List<Offset> _vertices = [
 ];
 
 class TriangleCategoryIndicator extends CustomPainter {
-  const TriangleCategoryIndicator(
-    this.triangleWidth,
-    this.triangleHeight,
-  );
-
   final double triangleWidth;
   final double triangleHeight;
 

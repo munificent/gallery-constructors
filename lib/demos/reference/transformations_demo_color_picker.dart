@@ -7,13 +7,6 @@ import 'package:flutter/material.dart';
 // A generic widget for a list of selectable colors.
 @immutable
 class ColorPicker extends StatelessWidget {
-  const ColorPicker({
-    super.key,
-    required this.colors,
-    required this.selectedColor,
-    this.onColorSelection,
-  });
-
   final Set<Color> colors;
   final Color selectedColor;
   final ValueChanged<Color>? onColorSelection;
@@ -40,12 +33,6 @@ class ColorPicker extends StatelessWidget {
 // A single selectable color widget in the ColorPicker.
 @immutable
 class _ColorPickerSwatch extends StatelessWidget {
-  const _ColorPickerSwatch({
-    required this.color,
-    required this.selected,
-    this.onTap,
-  });
-
   final Color color;
   final bool selected;
   final Function? onTap;

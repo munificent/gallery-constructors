@@ -14,8 +14,6 @@ import 'package:scoped_model/scoped_model.dart';
 const _ordinalSortKeyName = 'home';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     final isDesktop = isDisplayDesktop(context);
@@ -30,13 +28,6 @@ class ProductPage extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    this.expandingBottomSheet,
-    this.scrim,
-    this.backdrop,
-    super.key,
-  });
-
   final ExpandingBottomSheet? expandingBottomSheet;
   final Widget? scrim;
   final Widget? backdrop;

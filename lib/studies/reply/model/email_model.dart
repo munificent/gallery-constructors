@@ -1,7 +1,8 @@
 class Email {
-  Email({
-    required this.id,
-    required this.avatar,
+  // If "default" also added optional parameters with default values for any
+  // field that had an initializer at its declaration, then these default values
+  // could all be moved to the field declarations and removed from here.
+  default Email({
     this.sender = '',
     this.time = '',
     this.subject = '',
@@ -21,18 +22,6 @@ class Email {
 }
 
 class InboxEmail extends Email {
-  InboxEmail({
-    required super.id,
-    required super.sender,
-    super.time,
-    super.subject,
-    super.message,
-    required super.avatar,
-    super.recipients,
-    super.containsPictures,
-    this.inboxType = InboxType.normal,
-  });
-
   InboxType inboxType;
 }
 

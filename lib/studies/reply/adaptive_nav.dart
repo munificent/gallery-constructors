@@ -28,8 +28,6 @@ const double _kFlingVelocity = 2.0;
 const _kAnimationDuration = Duration(milliseconds: 300);
 
 class AdaptiveNav extends StatefulWidget {
-  const AdaptiveNav({super.key});
-
   @override
   State<AdaptiveNav> createState() => _AdaptiveNavState();
 }
@@ -130,13 +128,6 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
 }
 
 class _DesktopNav extends StatefulWidget {
-  const _DesktopNav({
-    required this.extended,
-    required this.destinations,
-    required this.folders,
-    required this.onItemTapped,
-  });
-
   final bool extended;
   final List<_Destination> destinations;
   final Map<String, String> folders;
@@ -247,8 +238,6 @@ class _DesktopNavState extends State<_DesktopNav>
 }
 
 class _NavigationRailHeader extends StatelessWidget {
-  const _NavigationRailHeader({required this.extended});
-
   final ValueNotifier<bool> extended;
 
   @override
@@ -342,8 +331,6 @@ class _NavigationRailHeader extends StatelessWidget {
 }
 
 class _NavigationRailFolderSection extends StatelessWidget {
-  const _NavigationRailFolderSection({required this.folders});
-
   final Map<String, String> folders;
 
   @override
@@ -437,12 +424,6 @@ class _NavigationRailFolderSection extends StatelessWidget {
 }
 
 class _MobileNav extends StatefulWidget {
-  const _MobileNav({
-    required this.destinations,
-    required this.folders,
-    required this.onItemTapped,
-  });
-
   final List<_Destination> destinations;
   final Map<String, String> folders;
   final void Function(int, MailboxPageType) onItemTapped;
@@ -694,17 +675,6 @@ class _MobileNavState extends State<_MobileNav> with TickerProviderStateMixin {
 }
 
 class _AnimatedBottomAppBar extends StatelessWidget {
-  const _AnimatedBottomAppBar({
-    required this.bottomAppBarController,
-    required this.bottomAppBarCurve,
-    required this.bottomDrawerVisible,
-    required this.drawerController,
-    required this.dropArrowCurve,
-    required this.navigationDestinations,
-    this.selectedMailbox,
-    this.toggleBottomDrawerVisibility,
-  });
-
   final AnimationController bottomAppBarController;
   final Animation<double> bottomAppBarCurve;
   final bool bottomDrawerVisible;
@@ -802,8 +772,6 @@ class _AnimatedBottomAppBar extends StatelessWidget {
 }
 
 class _BottomAppBarActionItems extends StatelessWidget {
-  const _BottomAppBarActionItems({required this.drawerVisible});
-
   final bool drawerVisible;
 
   @override
@@ -905,14 +873,6 @@ class _BottomAppBarActionItems extends StatelessWidget {
 }
 
 class _BottomDrawerDestinations extends StatelessWidget {
-  const _BottomDrawerDestinations({
-    required this.destinations,
-    required this.drawerController,
-    required this.dropArrowController,
-    required this.selectedMailbox,
-    required this.onItemTapped,
-  });
-
   final List<_Destination> destinations;
   final AnimationController drawerController;
   final AnimationController dropArrowController;
@@ -975,12 +935,6 @@ class _BottomDrawerDestinations extends StatelessWidget {
 }
 
 class _Destination {
-  const _Destination({
-    required this.type,
-    required this.textLabel,
-    required this.icon,
-  });
-
   // Which mailbox page to display. For example, 'Starred' or 'Trash'.
   final MailboxPageType type;
 
@@ -992,8 +946,6 @@ class _Destination {
 }
 
 class _BottomDrawerFolderSection extends StatelessWidget {
-  const _BottomDrawerFolderSection({required this.folders});
-
   final Map<String, String> folders;
 
   @override
@@ -1029,10 +981,6 @@ class _BottomDrawerFolderSection extends StatelessWidget {
 }
 
 class _MailNavigator extends StatefulWidget {
-  const _MailNavigator({
-    required this.child,
-  });
-
   final Widget child;
 
   @override
@@ -1072,8 +1020,6 @@ class _MailNavigatorState extends State<_MailNavigator> {
 }
 
 class _ReplyLogo extends StatelessWidget {
-  const _ReplyLogo();
-
   @override
   Widget build(BuildContext context) {
     return const ImageIcon(
@@ -1226,11 +1172,6 @@ class _ReplyFabState extends State<_ReplyFab>
 }
 
 class _FadeThroughTransitionSwitcher extends StatelessWidget {
-  const _FadeThroughTransitionSwitcher({
-    required this.fillColor,
-    required this.child,
-  });
-
   final Widget child;
   final Color fillColor;
 
@@ -1251,8 +1192,6 @@ class _FadeThroughTransitionSwitcher extends StatelessWidget {
 }
 
 class _SharedAxisTransitionSwitcher extends StatelessWidget {
-  const _SharedAxisTransitionSwitcher({required this.defaultChild});
-
   final Widget defaultChild;
 
   @override

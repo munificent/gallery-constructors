@@ -153,11 +153,6 @@ class RouteConfiguration {
 }
 
 class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
-  NoAnimationMaterialPageRoute({
-    required super.builder,
-    super.settings,
-  });
-
   @override
   Widget buildTransitions(
     BuildContext context,
@@ -170,11 +165,6 @@ class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
 }
 
 class TwoPanePageRoute<T> extends OverlayRoute<T> {
-  TwoPanePageRoute({
-    required this.builder,
-    super.settings,
-  });
-
   final WidgetBuilder builder;
 
   @override

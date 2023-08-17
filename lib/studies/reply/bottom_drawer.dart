@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gallery/studies/reply/colors.dart';
 
 class BottomDrawer extends StatelessWidget {
-  const BottomDrawer({
-    super.key,
-    this.onVerticalDragUpdate,
-    this.onVerticalDragEnd,
-    required this.leading,
-    required this.trailing,
-  });
-
   final GestureDragUpdateCallback? onVerticalDragUpdate;
   final GestureDragEndCallback? onVerticalDragEnd;
   final Widget leading;

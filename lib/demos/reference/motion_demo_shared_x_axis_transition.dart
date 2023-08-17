@@ -9,7 +9,6 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 // BEGIN sharedXAxisTransitionDemo
 
 class SharedXAxisTransitionDemo extends StatefulWidget {
-  const SharedXAxisTransitionDemo({super.key});
   @override
   State<SharedXAxisTransitionDemo> createState() =>
       _SharedXAxisTransitionDemoState();
@@ -91,8 +90,6 @@ class _SharedXAxisTransitionDemoState extends State<SharedXAxisTransitionDemo> {
 }
 
 class _CoursePage extends StatelessWidget {
-  const _CoursePage();
-
   @override
   Widget build(BuildContext context) {
     final localizations = GalleryLocalizations.of(context)!;
@@ -130,10 +127,6 @@ class _CoursePage extends StatelessWidget {
 }
 
 class _CourseSwitch extends StatefulWidget {
-  const _CourseSwitch({
-    this.course,
-  });
-
   final String? course;
 
   @override
@@ -164,8 +157,6 @@ class _CourseSwitchState extends State<_CourseSwitch> {
 }
 
 class _SignInPage extends StatelessWidget {
-  const _SignInPage();
-
   @override
   Widget build(BuildContext context) {
     final localizations = GalleryLocalizations.of(context);

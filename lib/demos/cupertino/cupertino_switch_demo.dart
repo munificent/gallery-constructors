@@ -8,8 +8,6 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 // BEGIN cupertinoSwitchDemo
 
 class CupertinoSwitchDemo extends StatefulWidget {
-  const CupertinoSwitchDemo({super.key});
-
   @override
   State<CupertinoSwitchDemo> createState() => _CupertinoSwitchDemoState();
 }

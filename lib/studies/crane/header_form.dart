@@ -15,19 +15,10 @@ class HeaderFormField {
   final IconData iconData;
   final String title;
   final TextEditingController textController;
-
-  const HeaderFormField({
-    required this.index,
-    required this.iconData,
-    required this.title,
-    required this.textController,
-  });
 }
 
 class HeaderForm extends StatelessWidget {
   final List<HeaderFormField> fields;
-
-  const HeaderForm({super.key, required this.fields});
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +69,6 @@ class HeaderForm extends StatelessWidget {
 
 class _HeaderTextField extends StatelessWidget {
   final HeaderFormField field;
-
-  const _HeaderTextField({required this.field});
 
   @override
   Widget build(BuildContext context) {

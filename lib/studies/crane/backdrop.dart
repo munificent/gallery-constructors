@@ -18,13 +18,6 @@ import 'package:gallery/studies/crane/model/data.dart';
 import 'package:gallery/studies/crane/model/destination.dart';
 
 class _FrontLayer extends StatefulWidget {
-  const _FrontLayer({
-    required this.title,
-    required this.index,
-    required this.mobileTopOffset,
-    required this.restorationId,
-  });
-
   final String title;
   final int index;
   final double mobileTopOffset;
@@ -133,14 +126,6 @@ class Backdrop extends StatefulWidget {
   final List<BackLayerItem> backLayerItems;
   final Widget frontTitle;
   final Widget backTitle;
-
-  const Backdrop({
-    super.key,
-    required this.frontLayer,
-    required this.backLayerItems,
-    required this.frontTitle,
-    required this.backTitle,
-  });
 
   @override
   State<Backdrop> createState() => _BackdropState();
@@ -300,12 +285,6 @@ class _BackdropState extends State<Backdrop>
 class CraneAppBar extends StatefulWidget {
   final Function(int)? tabHandler;
   final TabController tabController;
-
-  const CraneAppBar({
-    super.key,
-    this.tabHandler,
-    required this.tabController,
-  });
 
   @override
   State<CraneAppBar> createState() => _CraneAppBarState();

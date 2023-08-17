@@ -8,8 +8,6 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 // BEGIN appbarDemo
 
 class AppBarDemo extends StatelessWidget {
-  const AppBarDemo({super.key});
-
   @override
   Widget build(BuildContext context) {
     var localization = GalleryLocalizations.of(context)!;

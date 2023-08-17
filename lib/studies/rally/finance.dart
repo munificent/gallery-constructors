@@ -19,14 +19,8 @@ import 'package:gallery/studies/rally/data.dart';
 import 'package:gallery/studies/rally/formatters.dart';
 
 class FinancialEntityView extends StatelessWidget {
-  const FinancialEntityView({
-    super.key,
-    required this.heroLabel,
-    required this.heroAmount,
-    required this.wholeAmount,
-    required this.segments,
-    required this.financialEntityCards,
-  }) : assert(segments.length == financialEntityCards.length);
+  default const FinancialEntityView()
+    : assert(segments.length == financialEntityCards.length);
 
   /// The amounts to assign each item.
   final List<RallyPieChartSegment> segments;
@@ -79,17 +73,6 @@ class FinancialEntityView extends StatelessWidget {
 
 /// A reusable widget to show balance information of a single entity as a card.
 class FinancialEntityCategoryView extends StatelessWidget {
-  const FinancialEntityCategoryView({
-    super.key,
-    required this.indicatorColor,
-    required this.indicatorFraction,
-    required this.title,
-    required this.subtitle,
-    required this.semanticsLabel,
-    required this.amount,
-    required this.suffix,
-  });
-
   final Color indicatorColor;
   final double indicatorFraction;
   final String title;
@@ -193,15 +176,6 @@ class FinancialEntityCategoryView extends StatelessWidget {
 
 /// Data model for [FinancialEntityCategoryView].
 class FinancialEntityCategoryModel {
-  const FinancialEntityCategoryModel(
-    this.indicatorColor,
-    this.indicatorFraction,
-    this.title,
-    this.subtitle,
-    this.usdAmount,
-    this.suffix,
-  );
-
   final Color indicatorColor;
   final double indicatorFraction;
   final String title;
@@ -316,8 +290,6 @@ List<FinancialEntityCategoryView> buildBudgetDataListViews(
 }
 
 class FinancialEntityCategoryDetailsPage extends StatelessWidget {
-  FinancialEntityCategoryDetailsPage({super.key});
-
   final List<DetailedEventData> items =
       DummyDataService.getDetailedEventItems();
 
@@ -367,12 +339,6 @@ class FinancialEntityCategoryDetailsPage extends StatelessWidget {
 }
 
 class _DetailedEventCard extends StatelessWidget {
-  const _DetailedEventCard({
-    required this.title,
-    required this.date,
-    required this.amount,
-  });
-
   final String title;
   final DateTime date;
   final double amount;
@@ -454,8 +420,6 @@ class _EventAmount extends StatelessWidget {
 }
 
 class _EventDate extends StatelessWidget {
-  const _EventDate({required this.date});
-
   final DateTime date;
 
   @override
@@ -470,8 +434,6 @@ class _EventDate extends StatelessWidget {
 }
 
 class _EventTitle extends StatelessWidget {
-  const _EventTitle({required this.title});
-
   final String title;
 
   @override

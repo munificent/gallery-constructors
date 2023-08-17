@@ -15,10 +15,7 @@ import 'package:gallery/studies/rally/formatters.dart';
 
 /// A colored piece of the [RallyPieChart].
 class RallyPieChartSegment {
-  const RallyPieChartSegment({
-    required this.color,
-    required this.value,
-  });
+  default const RallyPieChartSegment();
 
   final Color color;
   final double value;
@@ -68,14 +65,6 @@ List<RallyPieChartSegment> buildSegmentsFromBudgetItems(
 /// An animated circular pie chart to represent pieces of a whole, which can
 /// have empty space.
 class RallyPieChart extends StatefulWidget {
-  const RallyPieChart({
-    super.key,
-    required this.heroLabel,
-    required this.heroAmount,
-    required this.wholeAmount,
-    required this.segments,
-  });
-
   final String heroLabel;
   final double heroAmount;
   final double wholeAmount;
@@ -133,13 +122,8 @@ class _RallyPieChartState extends State<RallyPieChart>
 }
 
 class _AnimatedRallyPieChart extends AnimatedWidget {
-  const _AnimatedRallyPieChart({
-    required this.animation,
-    required this.centerLabel,
-    required this.centerAmount,
-    required this.total,
-    required this.segments,
-  }) : super(listenable: animation);
+  default const _AnimatedRallyPieChart()
+      : super(listenable: animation);
 
   final Animation<double> animation;
   final String centerLabel;
@@ -197,12 +181,6 @@ class _AnimatedRallyPieChart extends AnimatedWidget {
 }
 
 class _RallyPieChartOutlineDecoration extends Decoration {
-  const _RallyPieChartOutlineDecoration({
-    required this.maxFraction,
-    required this.total,
-    required this.segments,
-  });
-
   final double maxFraction;
   final double total;
   final List<RallyPieChartSegment> segments;
@@ -218,12 +196,6 @@ class _RallyPieChartOutlineDecoration extends Decoration {
 }
 
 class _RallyPieChartOutlineBoxPainter extends BoxPainter {
-  _RallyPieChartOutlineBoxPainter({
-    required this.maxFraction,
-    required this.wholeAmount,
-    required this.segments,
-  });
-
   final double maxFraction;
   final double wholeAmount;
   final List<RallyPieChartSegment> segments;
