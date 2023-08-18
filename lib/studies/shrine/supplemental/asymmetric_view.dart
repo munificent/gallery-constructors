@@ -22,12 +22,10 @@ const _bottomPadding = 44.0;
 const _cardToScreenWidthRatio = 0.59;
 
 class MobileAsymmetricView extends StatelessWidget {
-  const MobileAsymmetricView({
+  const ({
     super.key,
-    required this.products,
+    required final List<Product> this.products,
   });
-
-  final List<Product> products;
 
   List<SizedBox> _buildColumns(
     BuildContext context,
@@ -165,12 +163,10 @@ class MobileAsymmetricView extends StatelessWidget {
 }
 
 class DesktopAsymmetricView extends StatelessWidget {
-  const DesktopAsymmetricView({
+  const ({
     super.key,
-    required this.products,
+    required final List<Product> this.products,
   });
-
-  final List<Product> products;
 
   @override
   Widget build(BuildContext context) {
@@ -227,18 +223,13 @@ class DesktopAsymmetricView extends StatelessWidget {
 }
 
 class DesktopColumns extends StatelessWidget {
-  const DesktopColumns({
+  const ({
     super.key,
-    required this.columnCount,
-    required this.products,
-    required this.largeImageWidth,
-    required this.smallImageWidth,
+    required final int this.columnCount,
+    required final List<Product> this.products,
+    required final double this.largeImageWidth,
+    required final double this.smallImageWidth,
   });
-
-  final int columnCount;
-  final List<Product> products;
-  final double largeImageWidth;
-  final double smallImageWidth;
 
   @override
   Widget build(BuildContext context) {

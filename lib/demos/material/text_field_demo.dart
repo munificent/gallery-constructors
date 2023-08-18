@@ -9,7 +9,7 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 // BEGIN textFieldDemo
 
 class TextFieldDemo extends StatelessWidget {
-  const TextFieldDemo({super.key});
+  const ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class TextFieldDemo extends StatelessWidget {
 }
 
 class TextFormFieldDemo extends StatefulWidget {
-  const TextFormFieldDemo({super.key});
+  const ({super.key});
 
   @override
   TextFormFieldDemoState createState() => TextFormFieldDemoState();
@@ -38,30 +38,19 @@ class PersonData {
 }
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({
+  const ({
     super.key,
-    this.restorationId,
-    this.fieldKey,
-    this.hintText,
-    this.labelText,
-    this.helperText,
-    this.onSaved,
-    this.validator,
-    this.onFieldSubmitted,
-    this.focusNode,
-    this.textInputAction,
+    final String? this.restorationId,
+    final Key? this.fieldKey,
+    final String? this.hintText,
+    final String? this.labelText,
+    final String? this.helperText,
+    final FormFieldSetter<String>? this.onSaved,
+    final FormFieldValidator<String>? this.validator,
+    final ValueChanged<String>? this.onFieldSubmitted,
+    final FocusNode? this.focusNode,
+    final TextInputAction? this.textInputAction,
   });
-
-  final String? restorationId;
-  final Key? fieldKey;
-  final String? hintText;
-  final String? labelText;
-  final String? helperText;
-  final FormFieldSetter<String>? onSaved;
-  final FormFieldValidator<String>? validator;
-  final ValueChanged<String>? onFieldSubmitted;
-  final FocusNode? focusNode;
-  final TextInputAction? textInputAction;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();

@@ -9,9 +9,7 @@ import 'package:gallery/demos/material/material_demo_types.dart';
 // BEGIN progressIndicatorsDemo
 
 class ProgressIndicatorDemo extends StatefulWidget {
-  const ProgressIndicatorDemo({super.key, required this.type});
-
-  final ProgressIndicatorDemoType type;
+  const ({super.key, required final ProgressIndicatorDemoType this.type});
 
   @override
   State<ProgressIndicatorDemo> createState() => _ProgressIndicatorDemoState();

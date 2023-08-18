@@ -15,13 +15,11 @@ const homePeekDesktop = 210.0;
 const homePeekMobile = 60.0;
 
 class SplashPageAnimation extends InheritedWidget {
-  const SplashPageAnimation({
+  const ({
     super.key,
-    required this.isFinished,
+    required final bool this.isFinished,
     required super.child,
   });
-
-  final bool isFinished;
 
   static SplashPageAnimation? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType();
@@ -32,12 +30,10 @@ class SplashPageAnimation extends InheritedWidget {
 }
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({
+  const ({
     super.key,
-    required this.child,
+    required final Widget this.child,
   });
-
-  final Widget child;
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -186,15 +182,11 @@ class _SplashPageState extends State<SplashPage>
 }
 
 class _SplashBackLayer extends StatelessWidget {
-  const _SplashBackLayer({
-    required this.isSplashCollapsed,
-    required this.effect,
-    this.onTap,
+  const ({
+    required final bool this.isSplashCollapsed,
+    required final int this.effect,
+    final GestureTapCallback? this.onTap,
   });
-
-  final bool isSplashCollapsed;
-  final int effect;
-  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

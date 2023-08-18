@@ -49,14 +49,11 @@ void main() async {
 }
 
 class GalleryApp extends StatelessWidget {
-  const GalleryApp({
+  const ({
     super.key,
-    this.initialRoute,
-    this.isTestMode = false,
+    final String? this.initialRoute,
+    final bool this.isTestMode = false,
   });
-
-  final String? initialRoute;
-  final bool isTestMode;
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +103,7 @@ class GalleryApp extends StatelessWidget {
 }
 
 class RootPage extends StatelessWidget {
-  const RootPage({
+  const ({
     super.key,
   });
 

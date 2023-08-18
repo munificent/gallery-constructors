@@ -9,14 +9,11 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 // BEGIN cupertinoNavigationDemo
 
 class _TabInfo {
-  const _TabInfo(this.title, this.icon);
-
-  final String title;
-  final IconData icon;
+  const (final String this.title, final IconData this.icon);
 }
 
 class CupertinoTabBarDemo extends StatelessWidget {
-  const CupertinoTabBarDemo({super.key});
+  const ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +62,10 @@ class CupertinoTabBarDemo extends StatelessWidget {
 }
 
 class _CupertinoDemoTab extends StatelessWidget {
-  const _CupertinoDemoTab({
-    required this.title,
-    required this.icon,
+  const ({
+    required final String this.title,
+    required final IconData this.icon,
   });
-
-  final String title;
-  final IconData icon;
 
   @override
   Widget build(BuildContext context) {

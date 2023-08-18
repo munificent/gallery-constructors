@@ -32,17 +32,14 @@ abstract class Destination {
 }
 
 class FlyDestination extends Destination {
-  const FlyDestination({
+  const ({
     required super.id,
     required super.destination,
     required super.assetSemanticLabel,
-    required this.stops,
+    required final int this.stops,
     super.imageAspectRatio = 1,
-    this.duration,
+    final Duration? this.duration,
   });
-
-  final int stops;
-  final Duration? duration;
 
   @override
   String get assetName => 'crane/destinations/fly_$id.jpg';
@@ -78,15 +75,13 @@ class FlyDestination extends Destination {
 }
 
 class SleepDestination extends Destination {
-  const SleepDestination({
+  const ({
     required super.id,
     required super.destination,
     required super.assetSemanticLabel,
-    required this.total,
+    required final int this.total,
     super.imageAspectRatio = 1,
   });
-
-  final int total;
 
   @override
   String get assetName => 'crane/destinations/sleep_$id.jpg';
@@ -98,15 +93,13 @@ class SleepDestination extends Destination {
 }
 
 class EatDestination extends Destination {
-  const EatDestination({
+  const ({
     required super.id,
     required super.destination,
     required super.assetSemanticLabel,
-    required this.total,
+    required final int this.total,
     super.imageAspectRatio = 1,
   });
-
-  final int total;
 
   @override
   String get assetName => 'crane/destinations/eat_$id.jpg';

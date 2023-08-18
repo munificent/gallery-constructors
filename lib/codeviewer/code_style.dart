@@ -5,27 +5,18 @@
 import 'package:flutter/material.dart';
 
 class CodeStyle extends InheritedWidget {
-  const CodeStyle({
+  const ({
     super.key,
-    this.baseStyle,
-    this.numberStyle,
-    this.commentStyle,
-    this.keywordStyle,
-    this.stringStyle,
-    this.punctuationStyle,
-    this.classStyle,
-    this.constantStyle,
+    final TextStyle? this.baseStyle,
+    final TextStyle? this.numberStyle,
+    final TextStyle? this.commentStyle,
+    final TextStyle? this.keywordStyle,
+    final TextStyle? this.stringStyle,
+    final TextStyle? this.punctuationStyle,
+    final TextStyle? this.classStyle,
+    final TextStyle? this.constantStyle,
     required super.child,
   });
-
-  final TextStyle? baseStyle;
-  final TextStyle? numberStyle;
-  final TextStyle? commentStyle;
-  final TextStyle? keywordStyle;
-  final TextStyle? stringStyle;
-  final TextStyle? punctuationStyle;
-  final TextStyle? classStyle;
-  final TextStyle? constantStyle;
 
   static CodeStyle of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<CodeStyle>()!;

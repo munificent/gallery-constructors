@@ -15,7 +15,7 @@ import 'package:gallery/studies/fortnightly/shared.dart';
 const _fortnightlyTitle = 'Fortnightly';
 
 class FortnightlyApp extends StatelessWidget {
-  const FortnightlyApp({super.key});
+  const ({super.key});
 
   static const String defaultRoute = routes.defaultRoute;
 
@@ -45,7 +45,7 @@ class FortnightlyApp extends StatelessWidget {
 }
 
 class _FortnightlyHomeMobile extends StatelessWidget {
-  const _FortnightlyHomeMobile();
+  const ();
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +94,7 @@ class _FortnightlyHomeMobile extends StatelessWidget {
 }
 
 class _FortnightlyHomeDesktop extends StatelessWidget {
-  const _FortnightlyHomeDesktop();
+  const ();
 
   @override
   Widget build(BuildContext context) {

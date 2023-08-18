@@ -36,7 +36,7 @@ const _carouselItemWidth = 296.0;
 class ToggleSplashNotification extends Notification {}
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -283,10 +283,11 @@ class _CategoriesHeader extends StatelessWidget {
 }
 
 class Header extends StatelessWidget {
-  const Header({super.key, required this.color, required this.text});
-
-  final Color color;
-  final String text;
+  const ({
+    super.key,
+    required final Color this.color,
+    required final String this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -311,15 +312,11 @@ class Header extends StatelessWidget {
 }
 
 class _AnimatedHomePage extends StatefulWidget {
-  const _AnimatedHomePage({
-    required this.restorationId,
-    required this.carouselCards,
-    required this.isSplashPageAnimationFinished,
+  const ({
+    required final String this.restorationId,
+    required final List<Widget> this.carouselCards,
+    required final bool this.isSplashPageAnimationFinished,
   });
-
-  final String restorationId;
-  final List<Widget> carouselCards;
-  final bool isSplashPageAnimationFinished;
 
   @override
   _AnimatedHomePageState createState() => _AnimatedHomePageState();
@@ -481,9 +478,7 @@ class _AnimatedHomePageState extends State<_AnimatedHomePage>
 }
 
 class _DesktopHomeItem extends StatelessWidget {
-  const _DesktopHomeItem({required this.child});
-
-  final Widget child;
+  const ({required final Widget child this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -501,15 +496,11 @@ class _DesktopHomeItem extends StatelessWidget {
 }
 
 class _DesktopCategoryItem extends StatelessWidget {
-  const _DesktopCategoryItem({
-    required this.category,
-    required this.asset,
-    required this.demos,
+  const ({
+    required final GalleryDemoCategory this.category,
+    required final ImageProvider this.asset,
+    required final List<GalleryDemo> his.demos,
   });
-
-  final GalleryDemoCategory category;
-  final ImageProvider asset;
-  final List<GalleryDemo> demos;
 
   @override
   Widget build(BuildContext context) {
@@ -552,13 +543,10 @@ class _DesktopCategoryItem extends StatelessWidget {
 }
 
 class _DesktopCategoryHeader extends StatelessWidget {
-  const _DesktopCategoryHeader({
-    required this.category,
-    required this.asset,
+  const ({
+    required final GalleryDemoCategory this.category,
+    required final ImageProvider this.asset,
   });
-
-  final GalleryDemoCategory category;
-  final ImageProvider asset;
 
   @override
   Widget build(BuildContext context) {
@@ -604,10 +592,10 @@ class _DesktopCategoryHeader extends StatelessWidget {
 /// gives a delay in the unit of a fraction of the whole animation duration,
 /// which is defined in [_AnimatedHomePageState].
 class _AnimatedCategoryItem extends StatelessWidget {
-  _AnimatedCategoryItem({
+  new ({
     required double startDelayFraction,
-    required this.controller,
-    required this.child,
+    required final AnimationController this.controller,
+    required final Widget this.child,
   }) : topPaddingAnimation = Tween(
           begin: 60.0,
           end: 0.0,
@@ -622,8 +610,6 @@ class _AnimatedCategoryItem extends StatelessWidget {
           ),
         );
 
-  final Widget child;
-  final AnimationController controller;
   final Animation<double> topPaddingAnimation;
 
   @override
@@ -643,9 +629,9 @@ class _AnimatedCategoryItem extends StatelessWidget {
 
 /// Animates the carousel to come in from the right.
 class _AnimatedCarousel extends StatelessWidget {
-  _AnimatedCarousel({
-    required this.child,
-    required this.controller,
+  new ({
+    required final Widget this.child,
+    required final AnimationController this.controller,
   }) : startPositionAnimation = Tween(
           begin: 1.0,
           end: 0.0,
@@ -660,8 +646,6 @@ class _AnimatedCarousel extends StatelessWidget {
           ),
         );
 
-  final Widget child;
-  final AnimationController controller;
   final Animation<double> startPositionAnimation;
 
   @override
@@ -692,9 +676,9 @@ class _AnimatedCarousel extends StatelessWidget {
 
 /// Animates a carousel card to come in from the right.
 class _AnimatedCarouselCard extends StatelessWidget {
-  _AnimatedCarouselCard({
-    required this.child,
-    required this.controller,
+  new ({
+    required final Widget this.child,
+    required final AnimationController this.controller,
   }) : startPaddingAnimation = Tween(
           begin: _horizontalPadding,
           end: 0.0,
@@ -709,8 +693,6 @@ class _AnimatedCarouselCard extends StatelessWidget {
           ),
         );
 
-  final Widget child;
-  final AnimationController controller;
   final Animation<double> startPaddingAnimation;
 
   @override
@@ -731,15 +713,11 @@ class _AnimatedCarouselCard extends StatelessWidget {
 }
 
 class _MobileCarousel extends StatefulWidget {
-  const _MobileCarousel({
-    required this.animationController,
-    this.restorationId,
-    required this.children,
+  const ({
+    required final AnimationController this.animationController,
+    final String? this.restorationId,
+    required final List<Widget> this.children,
   });
-
-  final AnimationController animationController;
-  final String? restorationId;
-  final List<Widget> children;
 
   @override
   _MobileCarouselState createState() => _MobileCarouselState();
@@ -936,7 +914,7 @@ class _DesktopCarouselState extends State<_DesktopCarousel> {
 
 /// Scrolling physics that snaps to the new item in the [_DesktopCarousel].
 class _SnappingScrollPhysics extends ScrollPhysics {
-  const _SnappingScrollPhysics({super.parent});
+  const ({super.parent});
 
   @override
   _SnappingScrollPhysics applyTo(ScrollPhysics? ancestor) {
@@ -989,13 +967,10 @@ class _SnappingScrollPhysics extends ScrollPhysics {
 }
 
 class _DesktopPageButton extends StatelessWidget {
-  const _DesktopPageButton({
-    this.isEnd = false,
-    this.onTap,
+  const ({
+    final bool this.isEnd = false,
+    final GestureTapCallback? this.onTap,
   });
-
-  final bool isEnd;
-  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -1037,23 +1012,15 @@ class _DesktopPageButton extends StatelessWidget {
 }
 
 class _CarouselCard extends StatelessWidget {
-  const _CarouselCard({
-    required this.demo,
-    this.asset,
-    this.assetDark,
-    this.assetColor,
-    this.assetDarkColor,
-    this.textColor,
-    required this.studyRoute,
+  const ({
+    required final GalleryDemo? this.demo,
+    final ImageProvider? this.asset,
+    final ImageProvider? this.assetDark,
+    final Color? this.assetColor,
+    final Color? this.assetDarkColor,
+    final Color? this.textColor,
+    required final String this.studyRoute,
   });
-
-  final GalleryDemo? demo;
-  final ImageProvider? asset;
-  final ImageProvider? assetDark;
-  final Color? assetColor;
-  final Color? assetDarkColor;
-  final Color? textColor;
-  final String studyRoute;
 
   @override
   Widget build(BuildContext context) {

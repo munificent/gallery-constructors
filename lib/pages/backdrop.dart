@@ -18,16 +18,12 @@ const double _settingsButtonHeightDesktop = 56;
 const double _settingsButtonHeightMobile = 40;
 
 class Backdrop extends StatefulWidget {
-  const Backdrop({
+  const ({
     super.key,
-    required this.isDesktop,
-    this.settingsPage,
-    this.homePage,
+    required final bool this.isDesktop,
+    final Widget? this.settingsPage,
+    final Widget? this.homePage,
   });
-
-  final bool isDesktop;
-  final Widget? settingsPage;
-  final Widget? homePage;
 
   @override
   State<Backdrop> createState() => _BackdropState();
@@ -240,15 +236,11 @@ class _BackdropState extends State<Backdrop> with TickerProviderStateMixin {
 }
 
 class _SettingsIcon extends AnimatedWidget {
-  const _SettingsIcon({
-    required this.animationController,
-    required this.toggleSettings,
-    required this.isSettingsOpenNotifier,
+  const ({
+    required final AnimationController this.animationController,
+    required final VoidCallback this.toggleSettings,
+    required final ValueNotifier<bool> this.isSettingsOpenNotifier,
   }) : super(listenable: animationController);
-
-  final AnimationController animationController;
-  final VoidCallback toggleSettings;
-  final ValueNotifier<bool> isSettingsOpenNotifier;
 
   String _settingsSemanticLabel(bool isOpen, BuildContext context) {
     return isOpen

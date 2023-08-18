@@ -19,21 +19,15 @@ import 'package:gallery/studies/rally/data.dart';
 import 'package:gallery/studies/rally/formatters.dart';
 
 class FinancialEntityView extends StatelessWidget {
-  const FinancialEntityView({
+  const ({
     super.key,
-    required this.heroLabel,
-    required this.heroAmount,
-    required this.wholeAmount,
-    required this.segments,
-    required this.financialEntityCards,
+    required final String this.heroLabel,
+    required final double this.heroAmount,
+    required final double this.wholeAmount,
+    /// The amounts to assign each item.
+    required final List<RallyPieChartSegment> this.segments,
+    required final List<FinancialEntityCategoryView> this.financialEntityCards,
   }) : assert(segments.length == financialEntityCards.length);
-
-  /// The amounts to assign each item.
-  final List<RallyPieChartSegment> segments;
-  final String heroLabel;
-  final double heroAmount;
-  final double wholeAmount;
-  final List<FinancialEntityCategoryView> financialEntityCards;
 
   @override
   Widget build(BuildContext context) {
@@ -79,24 +73,16 @@ class FinancialEntityView extends StatelessWidget {
 
 /// A reusable widget to show balance information of a single entity as a card.
 class FinancialEntityCategoryView extends StatelessWidget {
-  const FinancialEntityCategoryView({
+  const ({
     super.key,
-    required this.indicatorColor,
-    required this.indicatorFraction,
-    required this.title,
-    required this.subtitle,
-    required this.semanticsLabel,
-    required this.amount,
-    required this.suffix,
+    required final Color this.indicatorColor,
+    required final double this.indicatorFraction,
+    required final String this.title,
+    required final String this.subtitle,
+    required final String this.semanticsLabel,
+    required final String this.amount,
+    required final Widget this.suffix,
   });
-
-  final Color indicatorColor;
-  final double indicatorFraction;
-  final String title;
-  final String subtitle;
-  final String semanticsLabel;
-  final String amount;
-  final Widget suffix;
 
   @override
   Widget build(BuildContext context) {
@@ -193,21 +179,14 @@ class FinancialEntityCategoryView extends StatelessWidget {
 
 /// Data model for [FinancialEntityCategoryView].
 class FinancialEntityCategoryModel {
-  const FinancialEntityCategoryModel(
-    this.indicatorColor,
-    this.indicatorFraction,
-    this.title,
-    this.subtitle,
-    this.usdAmount,
-    this.suffix,
+  const (
+    final Color this.indicatorColor,
+    final double this.indicatorFraction,
+    final String this.title,
+    final String this.subtitle,
+    final double this.usdAmount,
+    final Widget this.suffix,
   );
-
-  final Color indicatorColor;
-  final double indicatorFraction;
-  final String title;
-  final String subtitle;
-  final double usdAmount;
-  final Widget suffix;
 }
 
 FinancialEntityCategoryView buildFinancialEntityFromAccountData(
@@ -316,7 +295,7 @@ List<FinancialEntityCategoryView> buildBudgetDataListViews(
 }
 
 class FinancialEntityCategoryDetailsPage extends StatelessWidget {
-  FinancialEntityCategoryDetailsPage({super.key});
+  new ({super.key});
 
   final List<DetailedEventData> items =
       DummyDataService.getDetailedEventItems();
@@ -367,15 +346,11 @@ class FinancialEntityCategoryDetailsPage extends StatelessWidget {
 }
 
 class _DetailedEventCard extends StatelessWidget {
-  const _DetailedEventCard({
-    required this.title,
-    required this.date,
-    required this.amount,
+  const ({
+    required final String this.title,
+    required final DateTime this.date,
+    required final double this.amount,
   });
-
-  final String title;
-  final DateTime date;
-  final double amount;
 
   @override
   Widget build(BuildContext context) {
@@ -454,9 +429,7 @@ class _EventAmount extends StatelessWidget {
 }
 
 class _EventDate extends StatelessWidget {
-  const _EventDate({required this.date});
-
-  final DateTime date;
+  const ({required final DateTime this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -470,9 +443,7 @@ class _EventDate extends StatelessWidget {
 }
 
 class _EventTitle extends StatelessWidget {
-  const _EventTitle({required this.title});
-
-  final String title;
+  const ({required final String this.title});
 
   @override
   Widget build(BuildContext context) {

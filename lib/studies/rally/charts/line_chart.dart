@@ -14,12 +14,10 @@ import 'package:gallery/studies/rally/formatters.dart';
 import 'package:intl/intl.dart' as intl;
 
 class RallyLineChart extends StatelessWidget {
-  const RallyLineChart({
+  const ({
     super.key,
-    this.events = const <DetailedEventData>[],
+    final List<DetailedEventData> this.events = const <DetailedEventData>[],
   });
-
-  final List<DetailedEventData> events;
 
   @override
   Widget build(BuildContext context) {
@@ -40,36 +38,28 @@ class RallyLineChart extends StatelessWidget {
 }
 
 class RallyLineChartPainter extends CustomPainter {
-  RallyLineChartPainter({
-    required this.dateFormat,
-    required this.numberFormat,
-    required this.events,
-    required this.labelStyle,
-    required this.textDirection,
-    required this.textScaleFactor,
-    required this.padding,
+  new ({
+    // The format for the dates.
+    required final intl.DateFormat this.dateFormat,
+
+    // The currency format.
+    required final intl.NumberFormat this.numberFormat,
+
+    // Events to plot on the line as points.
+    required final List<DetailedEventData> this.events,
+
+    // The style for the labels.
+    required final TextStyle this.labelStyle,
+
+    // The text direction for the text.
+    required final TextDirection? this.textDirection,
+
+    // The text scale factor for the text.
+    required final double this.textScaleFactor,
+
+    // The padding around the text.
+    required final EdgeInsets this.padding,
   });
-
-  // The style for the labels.
-  final TextStyle labelStyle;
-
-  // The text direction for the text.
-  final TextDirection? textDirection;
-
-  // The text scale factor for the text.
-  final double textScaleFactor;
-
-  // The padding around the text.
-  final EdgeInsets padding;
-
-  // The format for the dates.
-  final intl.DateFormat dateFormat;
-
-  // The currency format.
-  final intl.NumberFormat numberFormat;
-
-  // Events to plot on the line as points.
-  final List<DetailedEventData> events;
 
   // Number of days to plot.
   // This is hardcoded to reflect the dummy data, but would be dynamic in a real

@@ -25,25 +25,25 @@ import 'package:gallery/studies/starter/routes.dart' as starter_app_routes;
 typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
 class Path {
-  const Path(this.pattern, this.builder, {this.openInSecondScreen = false});
+  const (
+    /// A RegEx string for route matching.
+    final String this.pattern,
 
-  /// A RegEx string for route matching.
-  final String pattern;
+    /// The builder for the associated pattern route. The first argument is the
+    /// [BuildContext] and the second argument a RegEx match if that is included
+    /// in the pattern.
+    ///
+    /// ```dart
+    /// Path(
+    ///   'r'^/demo/([\w-]+)$',
+    ///   (context, matches) => Page(argument: match),
+    /// )
+    /// ```
+    final PathWidgetBuilder this.builder, {
 
-  /// The builder for the associated pattern route. The first argument is the
-  /// [BuildContext] and the second argument a RegEx match if that is included
-  /// in the pattern.
-  ///
-  /// ```dart
-  /// Path(
-  ///   'r'^/demo/([\w-]+)$',
-  ///   (context, matches) => Page(argument: match),
-  /// )
-  /// ```
-  final PathWidgetBuilder builder;
-
-  /// If the route should open on the second screen on foldables.
-  final bool openInSecondScreen;
+    /// If the route should open on the second screen on foldables.
+    final bool this.openInSecondScreen = false,
+  });
 }
 
 class RouteConfiguration {
@@ -153,10 +153,7 @@ class RouteConfiguration {
 }
 
 class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
-  NoAnimationMaterialPageRoute({
-    required super.builder,
-    super.settings,
-  });
+  new ({required super.builder, super.settings});
 
   @override
   Widget buildTransitions(
@@ -170,12 +167,10 @@ class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
 }
 
 class TwoPanePageRoute<T> extends OverlayRoute<T> {
-  TwoPanePageRoute({
-    required this.builder,
+  new ({
+    required final WidgetBuilder this.builder,
     super.settings,
   });
-
-  final WidgetBuilder builder;
 
   @override
   Iterable<OverlayEntry> createOverlayEntries() sync* {

@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 // BEGIN cupertinoPickersDemo
 
 class CupertinoPickerDemo extends StatefulWidget {
-  const CupertinoPickerDemo({super.key});
+  const ({super.key});
 
   @override
   State<CupertinoPickerDemo> createState() => _CupertinoPickerDemoState();
@@ -262,9 +262,7 @@ class _CupertinoPickerDemoState extends State<CupertinoPickerDemo> {
 }
 
 class _BottomPicker extends StatelessWidget {
-  const _BottomPicker({required this.child});
-
-  final Widget child;
+  const ({required final Widget this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -294,9 +292,7 @@ class _BottomPicker extends StatelessWidget {
 }
 
 class _Menu extends StatelessWidget {
-  const _Menu({required this.children});
-
-  final List<Widget> children;
+  const ({required final List<Widget> children this.children});
 
   @override
   Widget build(BuildContext context) {

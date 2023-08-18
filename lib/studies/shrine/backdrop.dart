@@ -16,13 +16,10 @@ const _peakVelocityTime = 0.248210;
 const _peakVelocityProgress = 0.379146;
 
 class _FrontLayer extends StatelessWidget {
-  const _FrontLayer({
-    this.onTap,
-    required this.child,
+  const ({
+    final VoidCallback? this.onTap,
+    required final Widget this.child,
   });
-
-  final VoidCallback? onTap;
-  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -65,16 +62,12 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  const _BackdropTitle({
+  const ({
     required Animation<double> super.listenable,
-    this.onPress,
-    required this.frontTitle,
-    required this.backTitle,
+    final void Function()? this.onPress,
+    required final Widgetthis.frontTitle,
+    required final Widgetthis.backTitle,
   });
-
-  final void Function()? onPress;
-  final Widget frontTitle;
-  final Widget backTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -180,20 +173,14 @@ class _BackdropTitle extends AnimatedWidget {
 /// can make a selection. The user can also configure the titles for when the
 /// front or back layer is showing.
 class Backdrop extends StatefulWidget {
-  const Backdrop({
+  const ({
     super.key,
-    required this.frontLayer,
-    required this.backLayer,
-    required this.frontTitle,
-    required this.backTitle,
-    required this.controller,
+    required final Widget this.frontLayer,
+    required final Widget this.backLayer,
+    required final Widget this.frontTitle,
+    required final Widget this.backTitle,
+    required final AnimationController this.controller,
   });
-
-  final Widget frontLayer;
-  final Widget backLayer;
-  final Widget frontTitle;
-  final Widget backTitle;
-  final AnimationController controller;
 
   @override
   State<Backdrop> createState() => _BackdropState();
@@ -365,14 +352,11 @@ class _BackdropState extends State<Backdrop>
 }
 
 class DesktopBackdrop extends StatelessWidget {
-  const DesktopBackdrop({
+  const ({
     super.key,
-    required this.frontLayer,
-    required this.backLayer,
+    required final Widget this.frontLayer,
+    required final Widget this.backLayer,
   });
-
-  final Widget frontLayer;
-  final Widget backLayer;
 
   @override
   Widget build(BuildContext context) {

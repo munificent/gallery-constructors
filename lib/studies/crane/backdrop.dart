@@ -18,17 +18,12 @@ import 'package:gallery/studies/crane/model/data.dart';
 import 'package:gallery/studies/crane/model/destination.dart';
 
 class _FrontLayer extends StatefulWidget {
-  const _FrontLayer({
-    required this.title,
-    required this.index,
-    required this.mobileTopOffset,
-    required this.restorationId,
+  const ({
+    required final String this.title,
+    required final int this.index,
+    required final double this.mobileTopOffset,
+    required final String this.restorationId,
   });
-
-  final String title;
-  final int index;
-  final double mobileTopOffset;
-  final String restorationId;
 
   @override
   _FrontLayerState createState() => _FrontLayerState();
@@ -129,17 +124,12 @@ class _FrontLayerState extends State<_FrontLayer> {
 /// can make a selection. The user can also configure the titles for when the
 /// front or back layer is showing.
 class Backdrop extends StatefulWidget {
-  final Widget frontLayer;
-  final List<BackLayerItem> backLayerItems;
-  final Widget frontTitle;
-  final Widget backTitle;
-
-  const Backdrop({
+  const ({
     super.key,
-    required this.frontLayer,
-    required this.backLayerItems,
-    required this.frontTitle,
-    required this.backTitle,
+    required final Widget this.frontLayer,
+    required final List<BackLayerItem> this.backLayerItems,
+    required final Widget this.frontTitle,
+    required final Widget this.backTitle,
   });
 
   @override
@@ -298,13 +288,10 @@ class _BackdropState extends State<Backdrop>
 }
 
 class CraneAppBar extends StatefulWidget {
-  final Function(int)? tabHandler;
-  final TabController tabController;
-
-  const CraneAppBar({
+  const ({
     super.key,
-    this.tabHandler,
-    required this.tabController,
+    final Function(int)? this.tabHandler,
+    required final TabController this.tabController,
   });
 
   @override

@@ -12,14 +12,11 @@ const backgroundColor = Color(0xFF272727);
 // The panel for editing a board point.
 @immutable
 class EditBoardPoint extends StatelessWidget {
-  const EditBoardPoint({
+  const ({
     super.key,
-    required this.boardPoint,
-    this.onColorSelection,
+    required final BoardPoint this.boardPoint,
+    final ValueChanged<Color>? this.onColorSelection,
   });
-
-  final BoardPoint boardPoint;
-  final ValueChanged<Color>? onColorSelection;
 
   @override
   Widget build(BuildContext context) {
